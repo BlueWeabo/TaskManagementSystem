@@ -6,14 +6,18 @@ using System.Linq;
 using Avalonia.Markup.Xaml;
 using TaskManagementSystem.ViewModels;
 using TaskManagementSystem.Views;
+using TaskManagementSystem.Data;
 
 namespace TaskManagementSystem;
 
 public partial class App : Application
 {
+    public static AppDbContext CONTEXT;
+
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
+        CONTEXT = new AppDbContext();
     }
 
     public override void OnFrameworkInitializationCompleted()
